@@ -107,6 +107,11 @@ sub profile_default
 # undo
 			[ Undo            => 0, 0, km::Alt|kb::Backspace, q(undo)],
 			[ Redo            => 0, 0, '^R', q(redo)],
+# alternative keys			
+			[ SelectAll   => 0,0  => '^A', sub{ $_[0]-> select_all }],
+			[ Copy        => 0, 0 => '^C', sub{ $_[0]-> copy }],			
+			[ Cut         => 0, 0 => '^X', sub{ $_[0]-> cut }],
+			[ Paste       => 0, 0 => '^V', sub{ $_[0]-> paste }],
 		],
 		autoIndent        => 1,
 		blockType         => bt::CUA,
